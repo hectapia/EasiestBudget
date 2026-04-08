@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.easybudget.easiestbudget.MainFragment"
+        android:label="Main">
+        <action
+            android:id="@+id/action_main_to_addUserBudget"
+            app:destination="@id/addUserBudgetFragment" />
+        <action
+            android:id="@+id/action_main_to_expenseList"
+            app:destination="@id/expenseListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addUserBudgetFragment"
+        android:name="com.easybudget.easiestbudget.AddUserBudgetFragment"
+        android:label="Add User Budget" />
+
+    <fragment
+        android:id="@+id/expenseListFragment"
+        android:name="com.easybudget.easiestbudget.ExpenseListFragment"
+        android:label="Expenses">
+        <argument android:name="userId" app:argType="integer" />
+        <action
+            android:id="@+id/action_expenseList_to_addExpense"
+            app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_expenseList_to_updateDeleteUser"
+            app:destination="@id/updateDeleteUserFragment" />
+        <action
+            android:id="@+id/action_expenseList_to_updateDeleteExpense"
+            app:destination="@id/updateDeleteExpenseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="com.easybudget.easiestbudget.AddExpenseFragment"
+        android:label="Add Expense">
+        <argument android:name="userId" app:argType="integer" />
+        <argument android:name="budgetId" app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateDeleteUserFragment"
+        android:name="com.easybudget.easiestbudget.UpdateDeleteUserFragment"
+        android:label="Update/Delete User">
+        <argument android:name="userId" app:argType="integer" />
+        <action
+            android:id="@+id/action_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateDeleteExpenseFragment"
+        android:name="com.easybudget.easiestbudget.UpdateDeleteExpenseFragment"
+        android:label="Update/Delete Expense">
+        <argument android:name="expenseId" app:argType="integer" />
+    </fragment>
+
+</navigation>

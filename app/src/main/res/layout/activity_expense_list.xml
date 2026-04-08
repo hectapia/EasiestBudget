@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#E0E0E0">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EasiestBudget"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back 1"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#154360"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User 1"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/btnUpdateDeleteUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update/Delete"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#00C853"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Budget limit"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/tvBudgetLimit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="$Amount"
+            android:background="#D6DBDF"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expenses list"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/btnNewExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ New"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#00C853"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#EDBB99"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="3">
+        <Button android:id="@+id/sortExpense" android:layout_width="0dp" android:layout_height="35dp" android:layout_weight="1" android:text="Expense" android:textSize="10sp" android:backgroundTint="#EDBB99" android:textColor="#000000"/>
+        <Button android:id="@+id/sortDate" android:layout_width="0dp" android:layout_height="35dp" android:layout_weight="1" android:text="Date" android:textSize="10sp" android:backgroundTint="#EDBB99" android:textColor="#000000"/>
+        <Button android:id="@+id/sortAmount" android:layout_width="0dp" android:layout_height="35dp" android:layout_weight="1" android:text="Amount" android:textSize="10sp" android:backgroundTint="#EDBB99" android:textColor="#000000"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:layout_marginTop="2dp"/>
+
+</LinearLayout>
