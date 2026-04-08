@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#E0E0E0">
+    android:padding="16dp"
+    android:background="?attr/colorSurface">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,68 +14,139 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EasiestBudget"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <Button
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="?attr/colorOnSurface" />
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back 3"
+            android:text="Back"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="#154360"/>
+            app:cornerRadius="12dp"
+            android:minHeight="48dp"/>
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User"
-        android:layout_marginTop="10dp"/>
+        android:text="User Settings"
+        android:layout_marginTop="24dp"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface"/>
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#D6DBDF"
-        android:padding="15dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="?attr/colorOutlineVariant">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Name"/>
-        <EditText android:id="@+id/etUserName" android:layout_width="match_parent" android:layout_height="wrap_content" android:enabled="false"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Category" android:layout_marginTop="5dp"/>
-        <EditText android:id="@+id/etCategory" android:layout_width="match_parent" android:layout_height="wrap_content" android:enabled="false"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:minHeight="48dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sum expenses" android:layout_marginTop="5dp"/>
-        <EditText android:id="@+id/etSumExpenses" android:layout_width="match_parent" android:layout_height="wrap_content" android:enabled="false"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Category"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:minHeight="48dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Balance" android:layout_marginTop="5dp"/>
-        <EditText android:id="@+id/etBalance" android:layout_width="match_parent" android:layout_height="wrap_content" android:enabled="false"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Sum Expenses"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSumExpenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:minHeight="48dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Budget" android:layout_marginTop="5dp"/>
-        <EditText android:id="@+id/etBudgetLimit" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Input new amount limit" android:inputType="numberDecimal"/>
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Balance"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:minHeight="48dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Budget"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBudgetLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:weightSum="2">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnUpdate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Update"
-            android:backgroundTint="#00C853"
-            android:layout_marginEnd="10dp"/>
-        <Button
+            app:cornerRadius="12dp"
+            android:layout_marginEnd="8dp"
+            android:minHeight="48dp"/>
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDelete"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Delete"
-            android:backgroundTint="#00C853"/>
+            app:cornerRadius="12dp"
+            android:textColor="?attr/colorError"
+            android:minHeight="48dp"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -8,6 +8,10 @@ import com.easybudget.easiestbudget.models.Budget
 import com.easybudget.easiestbudget.models.Expense
 import com.easybudget.easiestbudget.models.User
 
+/**
+ * The main Room database class for the application.
+ * Defines the entities included in the database and the DAO used to access them.
+ */
 @Database(
     entities = [User::class, Budget::class, Expense::class],
     version = 1,
@@ -15,12 +19,18 @@ import com.easybudget.easiestbudget.models.User
 )
 abstract class AppDatabase : RoomDatabase() {
 
+    /** Provides access to the Data Access Object (DAO). */
     abstract fun appDao(): AppDao
 
     companion object {
+        // Singleton instance to prevent multiple instances of the database being opened simultaneously
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
+        /**
+         * Gets the singleton instance of the database.
+         * Creates a new instance if one doesn't exist.
+         */
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
@@ -28,7 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "easiest_budget_db"
                 )
-                    // Optional: Handles foreign key constraints explicitly if needed by the system
+                    // Enables Write-Ahead Logging for better performance and concurrency
                     .setJournalMode(JournalMode.WRITE_AHEAD_LOGGING)
                     .build()
                 INSTANCE = instance
