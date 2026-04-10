@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EasiestBudget"
+            android:text="@string/title_app"
             android:textAppearance="?attr/textAppearanceHeadlineSmall"
             android:textColor="?attr/colorOnSurface" />
         <com.google.android.material.button.MaterialButton
@@ -21,7 +21,7 @@
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
+            android:text="@string/btn_back"
             android:layout_alignParentEnd="true"
             app:cornerRadius="12dp"
             android:minHeight="48dp"/>
@@ -42,7 +42,7 @@
             android:id="@+id/btnUpdateDeleteUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update/Delete"
+            android:text="@string/btn_update_delete"
             android:layout_alignParentEnd="true"
             app:cornerRadius="12dp"
             android:minHeight="48dp"/>
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Budget limit"
+            android:text="@string/label_budget_limit"
             android:textAppearance="?attr/textAppearanceBodyLarge"
             android:textColor="?attr/colorOnSurfaceVariant"/>
         <TextView
@@ -80,7 +80,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expenses list"
+            android:text="@string/label_expenses_list"
             android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textColor="?attr/colorOnSurface"
             android:layout_centerVertical="true"/>
@@ -88,7 +88,7 @@
             android:id="@+id/btnNewExpense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+ New"
+            android:text="@string/btn_new"
             android:layout_alignParentEnd="true"
             app:cornerRadius="12dp"
             android:minHeight="48dp"/>
@@ -108,7 +108,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Expense"
+            android:text="@string/sort_expense"
             android:textColor="?attr/colorOnTertiaryContainer"
             android:minHeight="48dp"/>
         <com.google.android.material.button.MaterialButton
@@ -117,7 +117,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Date"
+            android:text="@string/sort_date"
             android:textColor="?attr/colorOnTertiaryContainer"
             android:minHeight="48dp"/>
         <com.google.android.material.button.MaterialButton
@@ -126,7 +126,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Amount"
+            android:text="@string/sort_amount"
             android:textColor="?attr/colorOnTertiaryContainer"
             android:minHeight="48dp"/>
     </LinearLayout>

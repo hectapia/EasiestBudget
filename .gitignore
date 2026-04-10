@@ -1,31 +1,56 @@
-# Gradle files
+# Gradle artifacts
 .gradle/
 build/
+app/build/
+app/release/
 
-# IntelliJ IDEA files
+# IntelliJ IDEA / Android Studio specific
 .idea/
 *.iml
 *.iws
 *.ipr
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Android Studio captures and caches
-/captures/
+*.swp
+*.bak
+.navigation/
+captures/
 .externalNativeBuild/
 .cxx/
 .kotlin/
+*.keystore
+!debug.keystore
+
+# Local configuration files
+local.properties
 
 # OS generated files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Log files
+# Log and temporary files
 *.log
+*.tmp
+*.temp
 
-# Built variants
+# Build outputs
 *.apk
 *.aar
 *.ap_
 *.dex
+*.class
+
+# Android Studio specific cache
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Room Schemas (Optional: remove if you want to track schema history)
+# schemas/
+
+# Gradle Wrapper
+# !gradle/wrapper/gradle-wrapper.jar
+# !gradlew
+# !gradlew.bat

@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EasiestBudget"
+        android:text="@string/title_app"
         android:textAppearance="?attr/textAppearanceHeadlineMedium"
         android:textColor="?attr/colorOnSurface" />
 
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Users"
+            android:text="@string/label_users"
             android:textAppearance="?attr/textAppearanceTitleLarge"
             android:textColor="?attr/colorOnSurface"
             android:layout_centerVertical="true"/>
@@ -29,7 +29,7 @@
             android:id="@+id/btnNewUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+ New"
+            android:text="@string/btn_new"
             android:layout_alignParentEnd="true"
             app:cornerRadius="12dp" />
     </RelativeLayout>
@@ -48,7 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="User"
+            android:text="@string/sort_user"
             android:textColor="?attr/colorOnSecondaryContainer"
             android:minHeight="48dp"/>
         <com.google.android.material.button.MaterialButton
@@ -57,7 +57,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Category"
+            android:text="@string/sort_category"
             android:textColor="?attr/colorOnSecondaryContainer"
             android:minHeight="48dp"/>
         <com.google.android.material.button.MaterialButton
@@ -66,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Amount"
+            android:text="@string/sort_amount"
             android:textColor="?attr/colorOnSecondaryContainer"
             android:minHeight="48dp"/>
     </LinearLayout>

@@ -1,11 +1,14 @@
 # Overview
 
 ## Sprint 3
-In this sprint, I transitioned **EasiestBudget** from a command-line interface to a native Android application. This journey involved mastering the Android lifecycle, Jetpack Navigation for seamless screen transitions, and ViewBinding for efficient UI interaction. I integrated a local Room Database to ensure data persistence, replacing the previous SQLite JDBC implementation with a more robust, Android-native ORM.
+In this sprint, I transitioned **EasiestBudget** from a command-line interface to a fully-featured, native Android application. This version represents a complete UI/UX overhaul using **Material Design 3**, mastering the Android lifecycle, Jetpack Navigation for seamless screen transitions, and ViewBinding for efficient UI interaction.
 
-**EasiestBudget** is a personal finance app that helps users track their spending against custom budget limits. Users can create multiple profiles, each with a specific category and budget amount. Within each profile, they can record individual expenses, view their total spending, and manage their records with full CRUD (Create, Read, Update, Delete) capabilities. The app provides real-time feedback, such as warnings when an expense exceeds the allocated budget.
-
-My purpose for creating this app was to build a practical, user-friendly tool that demonstrates a complete mobile development workflow—from UI design and navigation to local data persistence and business logic.
+Key accomplishments in this sprint:
+- **Reactive Data Layer:** Integrated a local Room Database with Kotlin Flows, ensuring that the UI updates instantly when financial records change.
+- **Material 3 UI:** Implemented a modern, vibrant violet theme with standardized 16dp padding, 12dp rounded corners, and accessible 48dp touch targets.
+- **Dynamic Sorting:** Built custom sorting logic for both the User Dashboard (by Name, Category, or Limit) and the Expense List (by Name, Date, or Amount).
+- **Stability & Performance:** Resolved critical navigation race conditions and optimized main-thread usage to eliminate "Application Not Responding" (ANR) errors.
+- **Accessibility & Localization:** Extracted all UI strings to `strings.xml` and added content descriptions for screen readers.
 
 - [EasiestBudget Android Mobile App branch](https://github.com/hectapia/EasiestBudget)
 
@@ -136,8 +139,8 @@ git clone https://github.com/hectapia/EasiestBudget.git
 
 # Future Work
 
-- **Data Visualization:** Implement charts (e.g., Pie or Bar charts) to show spending trends.
-- **Dark Mode Support:** Ensure the UI is fully compatible with system-wide dark themes.
-- **Cloud Sync:** Integrate Firebase or a similar service to backup data and sync across devices.
-- **Notifications:** Add reminders to log daily expenses or alerts when a budget is nearing its limit.
-- **Search & Filter:** Add functionality to search for specific expenses or filter by date/category.
+- **Data Visualization:** Implement interactive Pie and Bar charts to visualize spending categories and monthly trends.
+- **Dynamic Color Support:** Expand the Material 3 implementation to support Android 12+ dynamic color (Monet) for a more personalized user experience.
+- **Cloud Sync & Backup:** Integrate Firebase or Google Drive API to allow users to sync their budget data across multiple devices.
+- **Smart Notifications:** Add proactive alerts when a user reaches 80% and 100% of their monthly budget limit.
+- **Advanced Filtering:** Add a search bar and the ability to filter expenses by custom date ranges or price brackets.
