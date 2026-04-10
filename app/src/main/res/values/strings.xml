@@ -23,4 +23,5 @@
     <string name="btn_add_expense">Add Expense</string>
     <string name="btn_update">Update</string>
     <string name="btn_delete">Delete</string>
+    <string name="label_balance">Balance</string>
 </resources>

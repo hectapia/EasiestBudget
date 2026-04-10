@@ -44,30 +44,39 @@
         android:weightSum="3">
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortUser"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="2dp"
             android:text="@string/sort_user"
             android:textColor="?attr/colorOnSecondaryContainer"
+            app:strokeColor="?attr/colorOutline"
+            app:cornerRadius="12dp"
             android:minHeight="48dp"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortCategory"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="2dp"
             android:text="@string/sort_category"
             android:textColor="?attr/colorOnSecondaryContainer"
+            app:strokeColor="?attr/colorOutline"
+            app:cornerRadius="12dp"
             android:minHeight="48dp"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortAmount"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="2dp"
             android:text="@string/sort_amount"
             android:textColor="?attr/colorOnSecondaryContainer"
+            app:strokeColor="?attr/colorOutline"
+            app:cornerRadius="12dp"
             android:minHeight="48dp"/>
     </LinearLayout>
 

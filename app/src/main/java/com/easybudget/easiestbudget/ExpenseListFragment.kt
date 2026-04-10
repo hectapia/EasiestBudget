@@ -16,6 +16,7 @@ import com.easybudget.easiestbudget.databinding.ItemExpenseRowBinding
 import com.easybudget.easiestbudget.models.Expense
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import java.util.Locale
 
 /**
  * Fragment that displays a list of expenses for a specific user.
@@ -78,6 +79,22 @@ class ExpenseListFragment : Fragment() {
             // Collect budget info to display limit and pass to AddExpense screen
             dao.getBudgetForUser(args.userId).collectLatest { budget ->
                 binding.tvBudgetLimit.text = "$${budget?.limitAmount ?: 0.0}"
+                
+                // Calculate and display balance
+                lifecycleScope.launch {
+                    dao.getExpensesForUser(args.userId).collectLatest { expenses ->
+                        val totalSpent = expenses.sumOf { it.amount }
+                        val balance = (budget?.limitAmount ?: 0.0) - totalSpent
+                        binding.tvBalance.text = "$${String.format(Locale.US, "%.2f", balance)}"
+                        
+                        // Optional: Turn balance red if negative
+                        if (balance < 0) {
+                            binding.tvBalance.setTextColor(resources.getColor(android.R.color.holo_red_dark, null))
+                        } else {
+                            binding.tvBalance.setTextColor(resources.getColor(R.color.black, null)) // Or use a theme color
+                        }
+                    }
+                }
                 
                 binding.btnNewExpense.setOnClickListener {
                     if (budget != null && findNavController().currentDestination?.id == R.id.expenseListFragment) {
