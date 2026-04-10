@@ -79,6 +79,7 @@ class ExpenseListFragment : Fragment() {
             // Collect budget info to display limit and pass to AddExpense screen
             dao.getBudgetForUser(args.userId).collectLatest { budget ->
                 binding.tvBudgetLimit.text = "$${budget?.limitAmount ?: 0.0}"
+                binding.tvCategory.text = budget?.category ?: "N/A"
                 
                 // Calculate and display balance
                 lifecycleScope.launch {

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EasiestBudget</string>
     <string name="title_app">EasiestBudget</string>
-    <string name="label_users">Users</string>
+    <string name="label_users">Users and Categories</string>
     <string name="btn_new">+ New</string>
     <string name="sort_user">User</string>
     <string name="sort_category">Category</string>
@@ -24,4 +24,5 @@
     <string name="btn_update">Update</string>
     <string name="btn_delete">Delete</string>
     <string name="label_balance">Balance</string>
+    <string name="label_category">Category</string>
 </resources>
