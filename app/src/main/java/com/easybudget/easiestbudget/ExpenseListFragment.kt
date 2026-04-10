@@ -89,29 +89,39 @@ class ExpenseListFragment : Fragment() {
             }
         }
 
-        // Observe the list of expenses for this specific user
-        var currentList = listOf<Expense>()
+        // Observe the list of expenses for this specific user and apply sorting
+        var rawList = listOf<Expense>()
+        var currentSortOrder = "NONE"
 
-        fun updateList(list: List<Expense>) {
-            currentList = list
-            adapter.submitList(list)
+        fun applySortAndDisplay() {
+            val sortedList = when (currentSortOrder) {
+                "NAME" -> rawList.sortedBy { it.name.lowercase() }
+                "DATE" -> rawList.sortedByDescending { it.date }
+                "AMOUNT" -> rawList.sortedByDescending { it.amount }
+                else -> rawList
+            }
+            adapter.submitList(sortedList)
         }
 
         binding.sortExpense.setOnClickListener {
-            updateList(currentList.sortedBy { it.name.lowercase() })
+            currentSortOrder = "NAME"
+            applySortAndDisplay()
         }
 
         binding.sortDate.setOnClickListener {
-            updateList(currentList.sortedByDescending { it.date }) // Assuming YYYY-MM-DD or similar for string sort
+            currentSortOrder = "DATE"
+            applySortAndDisplay()
         }
 
         binding.sortAmount.setOnClickListener {
-            updateList(currentList.sortedByDescending { it.amount })
+            currentSortOrder = "AMOUNT"
+            applySortAndDisplay()
         }
 
         lifecycleScope.launch {
             dao.getExpensesForUser(args.userId).collectLatest {
-                updateList(it)
+                rawList = it
+                applySortAndDisplay()
             }
         }
     }

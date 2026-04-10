@@ -1,5 +1,6 @@
 package com.easybudget.easiestbudget
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,8 @@ import com.easybudget.easiestbudget.database.AppDatabase
 import com.easybudget.easiestbudget.databinding.ItemUpdateDeleteExpenseBinding
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import java.util.Calendar
+import java.util.Locale
 
 /**
  * Fragment for updating or deleting an individual Expense record.
@@ -62,6 +65,26 @@ class UpdateDeleteExpenseFragment : Fragment() {
             binding.etBalance.setText((budget.limitAmount - totalSpent).toString())
             binding.etCost.setText(expense.amount.toString())
             binding.etDate.setText(expense.date)
+
+            // Calendar Picker for the date field
+            binding.etDate.setOnClickListener {
+                val calendar = Calendar.getInstance()
+                // Parse current date if possible, otherwise use today
+                val currentParts = expense.date.split("-")
+                val year = if (currentParts.size == 3) currentParts[0].toInt() else calendar.get(Calendar.YEAR)
+                val month = if (currentParts.size == 3) currentParts[1].toInt() - 1 else calendar.get(Calendar.MONTH)
+                val day = if (currentParts.size == 3) currentParts[2].toInt() else calendar.get(Calendar.DAY_OF_MONTH)
+
+                val datePickerDialog = DatePickerDialog(
+                    requireContext(),
+                    { _, selectedYear, selectedMonth, selectedDay ->
+                        val formattedDate = String.format(Locale.US, "%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay)
+                        binding.etDate.setText(formattedDate)
+                    },
+                    year, month, day
+                )
+                datePickerDialog.show()
+            }
 
             // Update button action: saves changes to the expense cost or date
             binding.btnUpdate.setOnClickListener {
