@@ -88,7 +88,7 @@ flowchart TD
 
 [Video Sprint 1](https://youtu.be/QyvKhQnDOjU) <br>
 [Video Sprint 2](https://youtu.be/BBI-YFD-bNo) <br>
-[Video Sprint 3](https://youtu.be/YOUR_VIDEO_LINK_HERE)
+[Video Sprint 3](https://youtu.be/yqP_zcDyo9Q)
 
 # Development Environment
 
